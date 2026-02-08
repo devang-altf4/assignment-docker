@@ -1,0 +1,27 @@
+# docker compose file for naksh jewels ecommerce
+# runs both frontend and backend together
+
+
+
+services:
+  # backend api service
+  backend:
+    build: ./backend
+    container_name: naksh-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+
+  # frontend react app
+  frontend:
+    build: ./frontend
+    container_name: naksh-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://backend:5000/api
+    restart: unless-stopped
