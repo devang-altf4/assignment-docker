@@ -185,8 +185,8 @@ Frontend runs on http://localhost:5173
 
 ### Backend (.env)
 ```
-MONGODB_URI=mongodb+srv://hackathon:devik@cluster0.7uqagt1.mongodb.net/naksh_ecommerce?appName=Cluster0
-JWT_SECRET=naksh_jewels_super_secret_key_2024
+MONGODB_URI=ur mongodb connection string 
+JWT_SECRET=ur secret key
 PORT=5000
 ```
 
